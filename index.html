@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniGo - Stationery Delivery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="c:\Users\JESUS\OneDrive\Desktop\unigo\logo.jpg" width="50" height="50" alt="UniGo Logo">
+                <h1> UniGo</h1>
+                <p>Stationery delivered</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                    <!-- around line ~25, inside your <ul> -->
+                    <li id="login-li">
+                        <a href="#" id="login-btn">Login</a>
+                      </li>
+                      <li>
+                        <a href="#" id="signup-btn" class="btn">Sign Up</a>
+                      </li>
+                      
+
+                
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Never Run Out of Stationery Again!</h2>
+            <p>Emergency delivery for students and professionals in Bangalore</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="offers">
+        <div class="container">
+            <h2>Special Offers</h2>
+            <div class="offer-cards">
+                <div class="offer-card">
+                    <div class="offer-badge">HOT</div>
+                    <h3>Exam Survival Kit</h3>
+                    <p>All essentials for exam season</p>
+                    <p class="price">₹499 <span class="old-price">₹699</span></p>
+                    <button class="btn offer-btn">Add to Cart</button>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">NEW</div>
+                    <h3>Back to School Bundle</h3>
+                    <p>Perfect for new semesters</p>
+                    <p class="price">₹799 <span class="old-price">₹999</span></p>
+                    <button class="btn offer-btn">Add to Cart</button>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">ECO</div>
+                    <h3>Eco-Friendly Pack</h3>
+                    <p>Sustainable stationery options</p>
+                    <p class="price">₹599 <span class="old-price">₹749</span></p>
+                    <button class="btn offer-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h3>2-Hour Delivery</h3>
+                <p>Get it fast when you need it most</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-rupee-sign"></i>
+                <h3>Student Discounts</h3>
+                <p>15% off with .edu email</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-recycle"></i>
+                <h3>Eco Options</h3>
+                <p>Sustainable stationery choices</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About UniGo</h2>
+            <p>UniGo was founded by students who knew the pain of last-minute stationery emergencies. We deliver quality products at fair prices with lightning-fast speed to campuses across Bangalore.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UniGo. All rights reserved.</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <p>Total: ₹<span id="cart-total">0</span></p>
+                <button class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- just before </body> -->
+  <!-- just before closing </body>, add: -->
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="login-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SIGNUP MODAL -->
+  <div class="modal" id="signup-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
